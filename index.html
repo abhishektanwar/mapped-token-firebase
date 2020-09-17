@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+		<link rel="stylesheet" href="styles.css">	</head>
+	<body>
+
+		<h1>Token mapping</h1>
+
+		<div class="content">
+
+			<form id="add-token-form">
+				<input type="text" name="address5" placeholder="address5">
+				<input type="text" name="address80001" placeholder="address80001">
+				<input type="text" name="decimals" placeholder="decimals">
+				<input type="text" name="id" placeholder="id">
+				<input type="text" name="name" placeholder="name">
+				<input type="text" name="symbol" placeholder="symbol">
+				<button>add token</button>
+			</form>
+
+			<form id="update-token-form">
+				<input type="text" name="dataID" placeholder="doc-ID">
+				<input type="text" name="address5" placeholder="address5">
+				<input type="text" name="address80001" placeholder="address80001">
+				<input type="text" name="decimals" placeholder="decimals">
+				<input type="text" name="id" placeholder="id">
+				<input type="text" name="name" placeholder="name">
+				<input type="text" name="symbol" placeholder="symbol">
+				<button id='update-token'>update token</button>
+			</form>
+
+			<ul id="token-list"></ul>
+			<br><br><br><br>
+
+			
+
+		</div>
+		<script>
+			const firebaseConfig = {
+				apiKey: "AIzaSyCn-Iv7_Ay3O4nGZ3JfVuxZKCnEwNLmM0A",
+				authDomain: "mapped-tokens-crud.firebaseapp.com",
+				databaseURL: "https://mapped-tokens-crud.firebaseio.com",
+				projectId: "mapped-tokens-crud",
+				storageBucket: "mapped-tokens-crud.appspot.com",
+				messagingSenderId: "1021737963582",
+				appId: "1:1021737963582:web:f9a605a0253bbaf761816f",
+				measurementId: "G-JRDRJZB4CL"
+			};
+			firebase.initializeApp(firebaseConfig);
+			const db = firebase.firestore();
+			db.settings({timestampsInSnapshots:true});
+		</script>
+
+		<script src="app.js"></script>
+	</body>
+</html>
